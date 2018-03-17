@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TermProject.iml" filepath="$PROJECT_DIR$/TermProject.iml" />
-      <module fileurl="file://C:\Users\Dana\Documents\Bentley\CS680\Assignments\TermProject\TermProject\TermProject.iml" filepath="C:\Users\Dana\Documents\Bentley\CS680\Assignments\TermProject\TermProject\TermProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\Dana\Documents\Bentley\CS680\Assignments\TermProject\TermProject\app\app.iml" filepath="C:\Users\Dana\Documents\Bentley\CS680\Assignments\TermProject\TermProject\app\app.iml" />
     </modules>
   </component>
 </project>
