@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/homeMenu"
+        android:title="Home"
+        android:showAsAction="never"
+        />
+    <item android:id="@+id/profileMenu"
+        android:title="Profile"
+        android:showAsAction="never"
+        />
+    <item android:id="@+id/materialsMenu"
+        android:title="Recyclable Materials"
+        android:showAsAction="never"
+        />
+    <item android:id="@+id/mapMenu"
+        android:title="Find a Bin"
+        android:showAsAction="never"
+        />
+    <item android:id="@+id/contactMenu"
+        android:title="Contact Office"
+        android:showAsAction="never"
+        />
+    <item android:id="@+id/exit"
+        android:title="Exit"
+        android:showAsAction="never"
+        />
+</menu>
