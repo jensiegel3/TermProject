@@ -17,6 +17,7 @@ import java.util.ArrayList;
 
 // Dana's update to project
 // Jen's update to project
+// Anton's update to project
 public class HomePage extends Activity implements OnClickListener {
 
     private Button recycleMaterials;
