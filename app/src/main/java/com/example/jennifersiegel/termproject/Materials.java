@@ -12,7 +12,7 @@ public class Materials extends Activity {
     private TextView nonRecyclableWarning;
     private Spinner materialTypeSpinner;
     private String nonRecyclableWarningContent =
-            "Please remember that the following items are not recyclable and should be placed in trash:";
+            "Please remember - the following items are trash:";
 
     private final String[] recyclableCategories = {
             "Paper & CardBoard",

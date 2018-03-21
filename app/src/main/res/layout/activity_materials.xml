@@ -17,8 +17,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="left"
-        android:textColor="#ff0000"
-        android:layout_marginLeft="20dip"/>
+        android:layout_marginLeft="10dip"
+        style="@style/warning_text"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,8 +43,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textColor="#000000"
-                android:text="Styrofoam" />
+                android:text="Styrofoam"
+                style="@style/warning_text"/>
 
         </LinearLayout>
 
@@ -59,15 +59,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@mipmap/nr_styrofoam"
+                android:src="@mipmap/nr_wrappers"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textColor="#000000"
-                android:text="Styrofoam" />
+                android:text="Snack Wrappers"
+                style="@style/warning_text"/>
 
         </LinearLayout>
 
@@ -82,15 +82,38 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@mipmap/nr_styrofoam"
+                android:src="@mipmap/nr_chip_bags"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textColor="#000000"
-                android:text="Styrofoam" />
+                android:text="Chip Bags"
+                style="@style/warning_text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/nr_plastic_bags"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Plastic Bags"
+                style="@style/warning_text"/>
 
         </LinearLayout>
 
@@ -112,15 +135,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@mipmap/nr_styrofoam"
+                android:src="@mipmap/nr_dirty_paper_products"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textColor="#000000"
-                android:text="Styrofoam" />
+                android:text="Dirty Paper Products"
+                style="@style/warning_text"/>
 
         </LinearLayout>
 
@@ -135,15 +158,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@mipmap/nr_styrofoam"
+                android:src="@mipmap/nr_food"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textColor="#000000"
-                android:text="Styrofoam" />
+                android:text="Food"
+                style="@style/warning_text"/>
 
         </LinearLayout>
 
@@ -158,15 +181,38 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@mipmap/nr_styrofoam"
+                android:src="@mipmap/nr_chopsticks"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textColor="#000000"
-                android:text="Styrofoam" />
+                android:text="Wood Chopsticks and Coffee Stirrers"
+                style="@style/warning_text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/nr_kcups"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="K-Cups"
+                style="@style/warning_text"/>
 
         </LinearLayout>
 

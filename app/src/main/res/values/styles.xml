@@ -8,4 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="warning_text">
+        <item name="android:textColor">@color/warningTextColor</item>
+    </style>
+
 </resources>
