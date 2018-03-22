@@ -20,6 +20,10 @@
         android:title="Contact Office"
         android:showAsAction="never"
         />
+    <item android:id="@+id/incentiveMenu"
+        android:title="Incentive"
+        android:showAsAction="never"
+        />
     <item android:id="@+id/exit"
         android:title="Exit"
         android:showAsAction="never"

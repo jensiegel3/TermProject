@@ -24,7 +24,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Materials" />
-        <activity android:name=".Profile"></activity>
+        <activity android:name=".Profile" />
+        <activity android:name=".Incentive"></activity>
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

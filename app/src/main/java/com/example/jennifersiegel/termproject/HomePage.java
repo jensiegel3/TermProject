@@ -72,6 +72,12 @@ public class HomePage extends Activity implements OnClickListener {
                 startActivity(iMaterials);
                 return true;
 
+            case R.id.incentiveMenu:
+                // can I use the same name?
+                Intent iIncentive = new Intent(this, Incentive.class);
+                startActivity(iIncentive);
+                return true;
+
             case R.id.exit:
                 finish();
                 return true;
