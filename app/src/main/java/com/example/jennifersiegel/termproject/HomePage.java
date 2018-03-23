@@ -78,6 +78,12 @@ public class HomePage extends Activity implements OnClickListener {
                 startActivity(iIncentive);
                 return true;
 
+            case R.id.contactMenu:
+                // can I use the same name?
+                Intent iContact = new Intent(this, ContactUs.class);
+                startActivity(iContact);
+                return true;
+
             case R.id.exit:
                 finish();
                 return true;

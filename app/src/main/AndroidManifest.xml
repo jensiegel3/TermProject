@@ -26,6 +26,7 @@
         <activity android:name=".Materials" />
         <activity android:name=".Profile" />
         <activity android:name=".Incentive"></activity>
+        <activity android:name=".ContactUs" />
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
 
