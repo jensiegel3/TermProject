@@ -7,6 +7,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Incentive extends Activity implements OnClickListener{
@@ -19,6 +22,16 @@ public class Incentive extends Activity implements OnClickListener{
         TextView learnMore = (TextView) findViewById(R.id.citation);
         learnMore.setOnClickListener(this);
         learnMore.setPaintFlags(learnMore.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
+        ImageView image = (ImageView) findViewById(R.id.turtleID);
+        image.setImageResource(R.drawable.turtle);
+
+        // Load the appropriate animation
+        Animation an =  AnimationUtils.loadAnimation(this, R.anim.turtle);
+        // Register a listener, so we can disable and re-enable buttons
+        //an.setAnimationListener(new MyAnimationListener());
+        // Start the animation
+        image.startAnimation(an);
 
     }
 
