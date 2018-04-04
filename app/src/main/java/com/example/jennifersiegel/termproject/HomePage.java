@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TabHost;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -33,6 +34,23 @@ public class HomePage extends Activity implements OnClickListener {
         // set up listeners for the buttons
         recycleMaterials = (Button) findViewById(R.id.materials);
         recycleMaterials.setOnClickListener(this);
+
+        TabHost tabs=(TabHost)findViewById(R.id.tabhost);
+        tabs.setup();
+
+        TabHost.TabSpec spec;
+
+        // Initialize a TabSpec for tab1 and add it to the TabHost
+        spec=tabs.newTabSpec("tag1");	//create new tab specification
+        spec.setContent(R.id.tab1);    //add tab view content
+        spec.setIndicator("Recycling");    //put text on tab
+        tabs.addTab(spec);             //put tab in TabHost container
+
+        // Initialize a TabSpec for tab2 and add it to the TabHost
+        spec=tabs.newTabSpec("tag2");		//create new tab specification
+        spec.setContent(R.id.tab2);			//add view tab content
+        spec.setIndicator("Trash");
+        tabs.addTab(spec);					//put tab in TabHost container
 
     }
 

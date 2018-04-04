@@ -25,12 +25,54 @@
             android:layout_gravity="center_horizontal"
             android:text="Check Material" />
 
-        <ImageView
+        <TabHost
+            android:id="@+id/tabhost"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="50dp"
-            android:adjustViewBounds="true"
-            android:src="@drawable/recycling" />
+            android:layout_height="match_parent">
+            <LinearLayout android:orientation="vertical"
+                android:layout_width="match_parent" android:layout_height="match_parent">
+            <TabWidget android:id="@android:id/tabs"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                />
+
+            <FrameLayout android:id="@android:id/tabcontent"
+                android:layout_width="match_parent" android:layout_height="match_parent">
+
+            <!-- first tab -->
+            <LinearLayout android:id="@+id/tab1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="50dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/recycling" />
+
+            </LinearLayout>
+
+            <!-- second tab -->
+            <LinearLayout android:id="@+id/tab2"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="50dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/trash" />
+
+            </LinearLayout>
+
+            </FrameLayout>
+
+            </LinearLayout>
+
+        </TabHost>
 
         <Button
             android:id="@+id/findabin"
