@@ -74,11 +74,11 @@ public class ContactUs extends Activity{
         });
 
     }
-    // create options menu
-    // does this have to go on every page?
+
+    // create back options menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
+        getMenuInflater().inflate(R.menu.backmenu, menu);
         return true;
     }
 
@@ -87,30 +87,7 @@ public class ContactUs extends Activity{
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
 
-            case R.id.profileMenu:
-                Intent iProfile = new Intent(this, Profile.class);
-                startActivity(iProfile);
-                return true;
-
-            case R.id.materialsMenu:
-                // can I use the same name?
-                Intent iMaterials = new Intent(this, Materials.class);
-                startActivity(iMaterials);
-                return true;
-
-            case R.id.incentiveMenu:
-                // can I use the same name?
-                Intent iIncentive = new Intent(this, Incentive.class);
-                startActivity(iIncentive);
-                return true;
-
-            case R.id.contactMenu:
-                // can I use the same name?
-                Intent iContact = new Intent(this, ContactUs.class);
-                startActivity(iContact);
-                return true;
-
-            case R.id.exit:
+            case R.id.homeMenu:
                 finish();
                 return true;
 

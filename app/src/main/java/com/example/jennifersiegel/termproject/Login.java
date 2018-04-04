@@ -40,7 +40,7 @@ public class Login extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.activity_login);
 
         text = (TextView) findViewById(R.id.loginResult);
         loginName = (EditText) findViewById(R.id.profileId);
@@ -99,48 +99,19 @@ public class Login extends Activity {
             db.close();
     }
 
-    // create options menu
-    // does this have to go on every page?
+    // create back options menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
+        getMenuInflater().inflate(R.menu.backmenu, menu);
         return true;
     }
 
     // add functionality to menu buttons
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()) {
+        switch (item.getItemId()){
 
-            case R.id.loginMenu:
-                Intent iLogin = new Intent(this, Login.class);
-                startActivity(iLogin);
-                return true;
-
-            case R.id.profileMenu:
-                Intent iProfile = new Intent(this, Profile.class);
-                startActivity(iProfile);
-                return true;
-
-            case R.id.materialsMenu:
-                // can I use the same name?
-                Intent iMaterials = new Intent(this, Materials.class);
-                startActivity(iMaterials);
-                return true;
-
-            case R.id.incentiveMenu:
-                // can I use the same name?
-                Intent iIncentive = new Intent(this, Incentive.class);
-                startActivity(iIncentive);
-                return true;
-
-            case R.id.contactMenu:
-                // can I use the same name?
-                Intent iContact = new Intent(this, ContactUs.class);
-                startActivity(iContact);
-                return true;
-
-            case R.id.exit:
+            case R.id.homeMenu:
                 finish();
                 return true;
 
