@@ -61,6 +61,11 @@ public class HomePage extends Activity implements OnClickListener {
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
 
+            case R.id.loginMenu:
+                Intent iLogin = new Intent(this, Login.class);
+                startActivity(iLogin);
+                return true;
+
             case R.id.profileMenu:
                 Intent iProfile = new Intent(this, Profile.class);
                 startActivity(iProfile);
