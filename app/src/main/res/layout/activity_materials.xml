@@ -18,12 +18,13 @@
         android:gravity="left"
         android:textColor="#000000"
         android:layout_marginLeft="20dip"
-        android:text="Select your item's material type below"/>
+        android:text="Please verify that your item is recyclable below:"/>
 
     <Spinner
         android:id="@+id/materialtypespinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"/>
 
     <TextView
         android:id="@+id/materialtextview"
@@ -31,8 +32,8 @@
         android:layout_height="wrap_content"
         android:gravity="left"
         android:textColor="#000000"
-        android:layout_marginLeft="20dip"
-        android:text="Select your item below"/>
+        android:layout_marginTop="10dip"
+        android:layout_marginLeft="20dip"/>
 
     <Button
         android:id="@+id/materials"
