@@ -51,11 +51,13 @@ public class Login extends Activity {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         db.execSQL(create);
 
+
         // insert records
         values = new ContentValues();
         values.put(KEY_NAME, "danafshay@gmail.com");
         values.put(KEY_Q, 4);
         db.insert(TABLE_NAME, null, values);
+
 
         values = new ContentValues();
         values.put(KEY_NAME, "antonbagayev@gmail.com");
@@ -72,6 +74,7 @@ public class Login extends Activity {
         values.put(KEY_Q, 37);
         db.insert(TABLE_NAME, null, values);
 
+
         //
         // NEED TO CREATE ONCLICKLISTENER to run query if no result, then insert
         //
@@ -79,16 +82,16 @@ public class Login extends Activity {
         //db.execSQL("INSERT INTO" + TABLE_NAME + "(" + KEY_NAME + ", " + KEY_Q + ") VALUES(" + loginName + ",0);");
 
         // query table and set sort order
-        //cursor = db.query(TABLE_NAME, new String[]{KEY_NAME, KEY_Q}, null, null, null, null, "email");
+        cursor = db.query(TABLE_NAME, new String[]{KEY_NAME, KEY_Q}, null, null, null, null, KEY_Q);
 
         // write contents of Cursor to screen
-        /*
+
         while (cursor.moveToNext()) {
             String str = cursor.getString(cursor
                     .getColumnIndex(KEY_NAME));
             int count = cursor.getInt(cursor.getColumnIndex(KEY_Q));
             text.append(str + " " + Integer.toString(count) + "\n");
-        }*/
+        }
     }
 
     // close database
