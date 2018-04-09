@@ -36,11 +36,12 @@
         android:layout_marginLeft="20dip"/>
 
     <Button
-        android:id="@+id/materials"
+        android:id="@+id/scanbarcodebtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Scan Now" />
+        android:text="Scan Now"
+        android:onClick="scanBarcode"/>
 
 
 </LinearLayout>
