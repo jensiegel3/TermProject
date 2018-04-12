@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.database.*;
 import android.database.sqlite.*;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.content.*;
@@ -19,11 +21,13 @@ import android.content.*;
 
 public class Login extends Activity {
 
+    private Button login;
     private TextView text;
     private EditText loginName;
     private SQLiteDatabase db;
     private ContentValues values;
     private Cursor cursor;
+    private int points;
 
     public static final String DATABASE_NAME = "users.db";
     public static final int DATABASE_VERSION = 1;
@@ -42,6 +46,9 @@ public class Login extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // Button to initiate login check
+        login = (Button) findViewById(R.id.login);
+
         text = (TextView) findViewById(R.id.loginResult);
         loginName = (EditText) findViewById(R.id.profileId);
 
@@ -51,26 +58,25 @@ public class Login extends Activity {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         db.execSQL(create);
 
-
         // insert records
         values = new ContentValues();
-        values.put(KEY_NAME, "danafshay@gmail.com");
+        values.put(KEY_NAME, "danafshay@gmail.com".toUpperCase());
         values.put(KEY_Q, 4);
         db.insert(TABLE_NAME, null, values);
 
 
         values = new ContentValues();
-        values.put(KEY_NAME, "antonbagayev@gmail.com");
+        values.put(KEY_NAME, "antonbagayev@gmail.com".toUpperCase());
         values.put(KEY_Q, 23);
         db.insert(TABLE_NAME, null, values);
 
         values = new ContentValues();
-        values.put(KEY_NAME, "jensiegel3@gmail.com");
+        values.put(KEY_NAME, "jensiegel3@gmail.com".toUpperCase());
         values.put(KEY_Q, 13);
         db.insert(TABLE_NAME, null, values);
 
         values = new ContentValues();
-        values.put(KEY_NAME, "mileskap@gmail.com");
+        values.put(KEY_NAME, "mileskap@gmail.com".toUpperCase());
         values.put(KEY_Q, 37);
         db.insert(TABLE_NAME, null, values);
 
@@ -83,16 +89,53 @@ public class Login extends Activity {
 
         // query table and set sort order
         cursor = db.query(TABLE_NAME, new String[]{KEY_NAME, KEY_Q}, null, null, null, null, KEY_Q);
-
-        // write contents of Cursor to screen
-
         while (cursor.moveToNext()) {
-            String str = cursor.getString(cursor
-                    .getColumnIndex(KEY_NAME));
+            String str = cursor.getString(cursor.getColumnIndex(KEY_NAME));
             int count = cursor.getInt(cursor.getColumnIndex(KEY_Q));
             text.append(str + " " + Integer.toString(count) + "\n");
         }
+
+        // LogIn button listener
+        login.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                String s = loginName.getText().toString().toUpperCase();
+                logInCheck(s);
+            }
+        });
+
+
     }
+
+    // Login Check method
+    public boolean logInCheck (String login){
+        boolean result = false;
+        String whereClause = KEY_NAME + "= ?";
+        String[] emailLogin = new String[] {login};
+
+        cursor = db.query(TABLE_NAME, new String[]{KEY_NAME, KEY_Q}, whereClause, emailLogin,null, null, null);
+
+
+        // write contents of Cursor to screen
+        while (cursor.moveToNext()) {
+            String str = cursor.getString(cursor.getColumnIndex(KEY_NAME));
+            int count = cursor.getInt(cursor.getColumnIndex(KEY_Q));
+            text.append(str + " " + Integer.toString(count) + "\n");
+        }
+
+        // temp code - must run check against database. Return true if
+        //if (cursor.getString(cursor.getColumnIndex(KEY_NAME)) == s) return true;
+        //else return false;
+        return result;
+    }
+
+    // Get points balance
+    public int pointsBalance(String email) {
+        int points = 0;
+
+        return points;
+    }
+
+
 
     // close database
     @Override
