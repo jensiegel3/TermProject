@@ -29,7 +29,7 @@
         <!-- Miles:     mileskey -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCxrNFRL-zQJibcZ8l3TcxiMQlg5vadY5Q" />
+            android:value="AIzaSyBHfqtk-0Ibm8TfDSZkjVTe5agXV6eN7Gc" />
 
         <activity android:name=".HomePage">
             <intent-filter>
