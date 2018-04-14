@@ -13,7 +13,7 @@
         android:title="Recyclable Materials"
         android:showAsAction="never"
         />
-    <item android:id="@+id/mapMenu"
+    <item android:id="@+id/findABinMenu"
         android:title="Find a Bin"
         android:showAsAction="never"
         />

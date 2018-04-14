@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class HomePage extends Activity implements OnClickListener {
 
     private Button recycleMaterials;
-
+    private Button findABin;
 
 
     @Override
@@ -34,6 +34,8 @@ public class HomePage extends Activity implements OnClickListener {
         // set up listeners for the buttons
         recycleMaterials = (Button) findViewById(R.id.materials);
         recycleMaterials.setOnClickListener(this);
+        findABin = (Button) findViewById(R.id.findabin);
+        findABin.setOnClickListener(this);
 
         TabHost tabs=(TabHost)findViewById(R.id.tabhost);
         tabs.setup();
@@ -59,6 +61,11 @@ public class HomePage extends Activity implements OnClickListener {
             case R.id.materials:
                 Intent iMaterials = new Intent(this, Materials.class);
                 startActivity(iMaterials);
+                break;
+
+            case R.id.findabin:
+                Intent iFindABin = new Intent(this, FindABin.class);
+                startActivity(iFindABin);
                 break;
 
             default:
@@ -90,21 +97,23 @@ public class HomePage extends Activity implements OnClickListener {
                 return true;
 
             case R.id.materialsMenu:
-                // can I use the same name?
                 Intent iMaterials = new Intent(this, Materials.class);
                 startActivity(iMaterials);
                 return true;
 
-            case R.id.incentiveMenu:
-                // can I use the same name?
-                Intent iIncentive = new Intent(this, Incentive.class);
-                startActivity(iIncentive);
+            case R.id.findABinMenu:
+                Intent iFindABin = new Intent(this, FindABin.class);
+                startActivity(iFindABin);
                 return true;
 
             case R.id.contactMenu:
-                // can I use the same name?
                 Intent iContact = new Intent(this, ContactUs.class);
                 startActivity(iContact);
+                return true;
+
+            case R.id.incentiveMenu:
+                Intent iIncentive = new Intent(this, Incentive.class);
+                startActivity(iIncentive);
                 return true;
 
             case R.id.exit:
