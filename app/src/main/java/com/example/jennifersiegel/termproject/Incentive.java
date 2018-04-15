@@ -42,7 +42,7 @@ public class Incentive extends Activity implements OnClickListener{
         mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
         ImageView image = (ImageView) findViewById(R.id.turtleID);
-        image.setImageResource(R.drawable.turtle);
+        image.setImageResource(R.drawable.rounded_turtle);
 
         Intent notifyIntent = new Intent(this, Incentive.class);
 

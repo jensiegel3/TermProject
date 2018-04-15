@@ -2,13 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="#F1B828">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#0077C8"
         android:gravity="center"
-        android:textColor="#FF00FF00"
+        android:textColor="#ffffff"
+        android:textSize="32sp"
         android:layout_margin="5dp"
         android:text="Congratulations!" />
 
@@ -16,7 +19,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textColor="#FF00FF00"
+        android:textColor="#0077C8"
+        android:textSize="22sp"
         android:layout_margin="5dp"
         android:text="You earned 10 points!" />
 
@@ -24,7 +28,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textColor="#FF00FF00"
+        android:textColor="#0077C8"
+        android:textSize="22sp"
         android:layout_margin="5dp"
         android:text="Get 20% off your next purchase using barcode below." />
 
@@ -33,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="5dp"
-        android:src="@mipmap/ic_launcher"
+        android:src="@drawable/incentive"
         />
 
     <TextView
@@ -41,7 +46,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textColor="#FF00FF00"
+        android:textColor="#0077C8"
+        android:textSize="18sp"
         android:layout_margin="5dp"
         android:text="Plastic bags that are thrown into the ocean kill over a million sea creatures a year." />
 
@@ -49,7 +55,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textColor="#FF00FF00"
+        android:textColor="#0077C8"
+        android:textSize="22sp"
         android:layout_margin="5dp"
         android:text="Thanks for helping out!" />
 
@@ -59,7 +66,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="5dp"
-        android:src="@drawable/turtle"
     />
 
 </LinearLayout>

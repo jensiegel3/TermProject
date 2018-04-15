@@ -3,32 +3,28 @@
     android:id="@+id/myScrollView1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:background="#0077C8">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:background="#0077C8">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textColor="#FF00FF00"
+            android:textColor="#FFFFFF"
             android:layout_margin="10dp"
-            android:text="Trash or Recycling?" />
-
-        <Button
-            android:id="@+id/materials"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Check Material" />
+            android:textSize="18sp"
+            android:text="What's recyclable and what's not?" />
 
         <TabHost
             android:id="@+id/tabhost"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="#F1B828">
             <LinearLayout android:orientation="vertical"
                 android:layout_width="match_parent" android:layout_height="match_parent">
             <TabWidget android:id="@android:id/tabs"
@@ -42,13 +38,14 @@
             <LinearLayout android:id="@+id/tab1"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                >
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginRight="50dp"
+                    android:maxHeight="400dp"
+                    android:layout_marginBottom="50dp"
                     android:adjustViewBounds="true"
                     android:src="@drawable/recycling" />
 
@@ -63,8 +60,8 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginRight="50dp"
+                    android:maxHeight="400dp"
+                    android:layout_marginBottom="50dp"
                     android:adjustViewBounds="true"
                     android:src="@drawable/trash" />
 
@@ -76,12 +73,27 @@
 
         </TabHost>
 
-        <Button
-            android:id="@+id/findabin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Find a Bin" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            >
+
+            <Button
+                android:id="@+id/findabin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Find a Bin" />
+
+            <Button
+                android:id="@+id/materials"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Check Material" />
+        </LinearLayout>
 
     </LinearLayout>
 
