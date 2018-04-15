@@ -1,19 +1,17 @@
 package com.example.jennifersiegel.termproject;
 
-import android.content.Intent;
-import android.provider.SyncStateContract;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.app.Activity;
 import android.os.Bundle;
 import android.database.*;
 import android.database.sqlite.*;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.content.*;
+import android.widget.Toast;
 
 /**
  * Created by Dana on 4/3/2018.
@@ -27,7 +25,7 @@ public class Login extends Activity {
     private SQLiteDatabase db;
     private ContentValues values;
     private Cursor cursor;
-    private int points;
+    private int idKey;
 
     public static final String DATABASE_NAME = "users.db";
     public static final int DATABASE_VERSION = 1;
@@ -55,9 +53,12 @@ public class Login extends Activity {
         // create database and table
         db = openOrCreateDatabase(DATABASE_NAME,
                 Context.MODE_PRIVATE, null);
+
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         db.execSQL(create);
 
+
+        // check if records exist
         // insert records
         values = new ContentValues();
         values.put(KEY_NAME, "danafshay@gmail.com".toUpperCase());
@@ -81,29 +82,36 @@ public class Login extends Activity {
         db.insert(TABLE_NAME, null, values);
 
 
-        //
-        // NEED TO CREATE ONCLICKLISTENER to run query if no result, then insert
-        //
+
         //insert a record with SQL
         //db.execSQL("INSERT INTO" + TABLE_NAME + "(" + KEY_NAME + ", " + KEY_Q + ") VALUES(" + loginName + ",0);");
 
         // query table and set sort order
+        /*
         cursor = db.query(TABLE_NAME, new String[]{KEY_NAME, KEY_Q}, null, null, null, null, KEY_Q);
         while (cursor.moveToNext()) {
             String str = cursor.getString(cursor.getColumnIndex(KEY_NAME));
             int count = cursor.getInt(cursor.getColumnIndex(KEY_Q));
             text.append(str + " " + Integer.toString(count) + "\n");
         }
+        */
 
         // LogIn button listener
         login.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
+
                 String s = loginName.getText().toString().toUpperCase();
-                logInCheck(s);
+
+                if (logInCheck(s)) {
+                    Toast.makeText(getApplicationContext(), "Found Profile", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "No Profile Found", Toast.LENGTH_LONG).show();
+                    // make create button separate from login button
+                    Toast.makeText(getApplicationContext(), "New Profile Generated", Toast.LENGTH_LONG).show();
+                }
             }
         });
-
-
     }
 
     // Login Check method
@@ -112,30 +120,28 @@ public class Login extends Activity {
         String whereClause = KEY_NAME + "= ?";
         String[] emailLogin = new String[] {login};
 
-        cursor = db.query(TABLE_NAME, new String[]{KEY_NAME, KEY_Q}, whereClause, emailLogin,null, null, null);
+        cursor = db.query(TABLE_NAME, new String[]{/*KEY_ID,*/ KEY_NAME, KEY_Q}, whereClause, emailLogin,null, null, null);
 
-
-        // write contents of Cursor to screen
+        // check for profile and write contents of Cursor to screen
         while (cursor.moveToNext()) {
+            result = true;
+            //idKey = cursor.getInt(cursor.getColumnIndex(KEY_ID));
             String str = cursor.getString(cursor.getColumnIndex(KEY_NAME));
             int count = cursor.getInt(cursor.getColumnIndex(KEY_Q));
-            text.append(str + " " + Integer.toString(count) + "\n");
+            text.append(
+//                    Integer.toString(idKey) + " " +
+                            str + " " + Integer.toString(count) + "\n");
         }
 
-        // temp code - must run check against database. Return true if
-        //if (cursor.getString(cursor.getColumnIndex(KEY_NAME)) == s) return true;
-        //else return false;
+        if (result == false) {
+            // set profile with 0 points
+            values = new ContentValues();
+            values.put(KEY_NAME, login.toUpperCase());
+            values.put(KEY_Q, 0);
+            db.insert(TABLE_NAME, null, values);
+        }
         return result;
     }
-
-    // Get points balance
-    public int pointsBalance(String email) {
-        int points = 0;
-
-        return points;
-    }
-
-
 
     // close database
     @Override
@@ -158,7 +164,8 @@ public class Login extends Activity {
         switch (item.getItemId()){
 
             case R.id.homeMenu:
-                finish();
+                Intent iHome = new Intent(this, HomePage.class);
+                startActivity(iHome);
                 return true;
 
             default:

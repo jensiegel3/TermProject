@@ -21,7 +21,7 @@ public class FindABin extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private static final LatLng CENTER_POINT = new LatLng(42.3870139,-71.2217289);
-    private static final LatLng BIN_1 = new LatLng(42.3861914,-71.2252736); // Student Center
+    private static final LatLng BIN_1 = new LatLng(42.386029,-71.2232306); // Student Center
     private static final LatLng BIN_2 = new LatLng(42.387241,-71.2197609);  // Adamian Academic Center
     private static final LatLng BIN_3 = new LatLng(42.3878667,-71.2199288); // Morison Hall
     private static final LatLng BIN_4 = new LatLng(42.3870139,-71.2217289); // User Experience Center
