@@ -46,7 +46,7 @@
             tools:replace="screenOrientation" />
         <activity android:name=".Profile" />
         <activity android:name=".Incentive" />
-        <activity android:name=".ContactUs" />
+        <activity android:name=".AboutUs" />
         <activity android:name=".FindABin"></activity>
     </application>
 

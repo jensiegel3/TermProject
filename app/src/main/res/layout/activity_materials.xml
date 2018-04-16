@@ -2,29 +2,33 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-
-    <TextClock
-        android:layout_width="wrap_content"
-        android:layout_height="20dip"
-        android:layout_gravity="center_horizontal"
-        android:format12Hour="EEE MMM dd yyyy, h:mm:ss aa"
-        android:textColor="#ff0000ff"
-        android:timeZone="EST" />
+    android:orientation="vertical"
+    android:background="#F1B828">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="left"
+        android:background = "#0077C8"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="32sp"
+        android:text="Material Lookup" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         android:textColor="#000000"
-        android:layout_marginLeft="20dip"
-        android:text="Please verify that your item is recyclable below:"/>
+        android:layout_margin="10dp"
+        android:textSize ="18sp"
+        android:text="Not sure if your item is recyclable? Select a material below to find out!"/>
 
     <Spinner
         android:id="@+id/materialtypespinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dip"/>
+        android:layout_marginTop="10dip"
+        />
 
     <TextView
         android:id="@+id/materialtextview"
@@ -33,7 +37,17 @@
         android:gravity="left"
         android:textColor="#000000"
         android:layout_marginTop="10dip"
-        android:layout_marginLeft="20dip"/>
+        android:layout_marginLeft="20dip"
+        android:textSize = "18sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:layout_margin="10dp"
+        android:textSize ="18sp"
+        android:text="Ready to recycle? Scan the QR code at the recycling bin to earn points!"/>
 
     <Button
         android:id="@+id/scanbarcodebtn"

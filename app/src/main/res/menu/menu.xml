@@ -10,15 +10,15 @@
         android:showAsAction="never"
         />
     <item android:id="@+id/materialsMenu"
-        android:title="Recyclable Materials"
+        android:title="Check Material"
         android:showAsAction="never"
         />
     <item android:id="@+id/findABinMenu"
         android:title="Find a Bin"
         android:showAsAction="never"
         />
-    <item android:id="@+id/contactMenu"
-        android:title="Contact Office"
+    <item android:id="@+id/aboutMenu"
+        android:title="About Us"
         android:showAsAction="never"
         />
     <item android:id="@+id/incentiveMenu"

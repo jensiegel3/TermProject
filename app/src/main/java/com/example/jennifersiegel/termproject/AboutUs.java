@@ -11,7 +11,7 @@ import android.view.View.OnClickListener;
 import android.view.View;
 import android.widget.EditText;
 
-public class ContactUs extends Activity{
+public class AboutUs extends Activity{
 
     private Button send;
     private Button call1;
@@ -22,7 +22,7 @@ public class ContactUs extends Activity{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contactus);
+        setContentView(R.layout.activity_aboutus);
         send = (Button) findViewById(R.id.send);
         call1 = (Button) findViewById(R.id.call1);
         call2 = (Button) findViewById(R.id.call2);

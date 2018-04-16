@@ -7,14 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
 import android.widget.TabHost;
-import android.widget.TextView;
-
-import java.util.ArrayList;
 
 // Dana's update to project
 // Jen's update to project
@@ -106,9 +100,9 @@ public class HomePage extends Activity implements OnClickListener {
                 startActivity(iFindABin);
                 return true;
 
-            case R.id.contactMenu:
-                Intent iContact = new Intent(this, ContactUs.class);
-                startActivity(iContact);
+            case R.id.aboutMenu:
+                Intent iAbout = new Intent(this, AboutUs.class);
+                startActivity(iAbout);
                 return true;
 
             case R.id.incentiveMenu:

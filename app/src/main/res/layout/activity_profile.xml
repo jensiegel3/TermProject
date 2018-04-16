@@ -2,23 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="#F1B828">
 
-    <TextClock
-        android:layout_width="wrap_content"
-        android:layout_height="50dip"
-        android:layout_gravity="center_horizontal"
-        android:format12Hour="EEE MMM dd yyyy, h:mm:ss aa"
-        android:textColor="#ff0000ff"
-        android:timeZone="EST" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0077C8"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="32sp"
+        android:text="Profile" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="10dp"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp">
+        android:layout_marginTop="10dp"
+        android:padding = "10dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -26,8 +27,9 @@
             android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:gravity="left"
+            android:textSize="22sp"
             android:textColor="#000000"
-            android:text="Name: " />
+            android:text="Email: " />
 
 
         <TextView
@@ -36,7 +38,9 @@
             android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:gravity="left"
-            android:textColor="#000000" />
+            android:textSize="22sp"
+            android:background="#ffffff"
+            android:textColor="#0077C8" />
 
     </LinearLayout>
 
@@ -54,6 +58,7 @@
             android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:gravity="left"
+            android:textSize="22sp"
             android:textColor="#000000"
             android:text="Number of Points: " />
 
@@ -64,9 +69,19 @@
             android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:gravity="left"
-            android:textColor="#000000" />
+            android:textSize="22sp"
+            android:background="#ffffff"
+            android:textColor="#0077C8" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="Logout" />
 
 
 </LinearLayout>
