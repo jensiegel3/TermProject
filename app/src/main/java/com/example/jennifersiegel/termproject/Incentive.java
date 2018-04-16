@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,9 +17,14 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.speech.tts.TextToSpeech;
+import android.speech.tts.TextToSpeech.OnInitListener;
+import android.widget.Toast;
+
+import java.util.Locale;
 
 
-public class Incentive extends Activity implements OnClickListener{
+public class Incentive extends Activity implements OnClickListener, OnInitListener {
 
     // create variables for notification
 
@@ -29,7 +35,8 @@ public class Incentive extends Activity implements OnClickListener{
     private String contentText = "Click to redeem.";
     // where is the ticker text?
     private String tickerText = "New Alert, Click Me !!!";
-
+    private TextToSpeech speaker;
+    private static final String tag = "Incentive";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,9 +95,47 @@ public class Incentive extends Activity implements OnClickListener{
         // Start the animation
         image.startAnimation(an);
 
+        // Initialize Text to Speech engine (context, listener object)
+        speaker = new TextToSpeech(this, this);
+
+    }
+
+    // speaks the contents of output
+    public void speak(String output) {
+        speaker.speak(output, TextToSpeech.QUEUE_FLUSH, null);
+    }
+
+    // Implements TextToSpeech.OnInitListener.
+    public void onInit(int status) {
+        // status can be either TextToSpeech.SUCCESS or TextToSpeech.ERROR.
+        if (status == TextToSpeech.SUCCESS) {
+            // Set preferred language to US english.
+            // If a language is not be available, the result will indicate it.
+            int result = speaker.setLanguage(Locale.US);
+
+            if (result == TextToSpeech.LANG_MISSING_DATA ||
+                    result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                // Language data is missing or the language is not supported.
+                Log.e(tag, "Language is not available.");
+            }
+        } else {
+            // Initialization failed.
+            Log.e(tag, "Could not initialize TextToSpeech.");
+        }
+    }
+
+    public void onDestroy() {
+
+        // shut down TTS engine
+        if (speaker != null) {
+            speaker.stop();
+            speaker.shutdown();
+        }
+        super.onDestroy();
     }
 
     public void onClick(View v) {
+        speak("Thanks for doing your part");
         Uri uriUrl = Uri.parse("https://www.conserve-energy-future.com/various-recycling-facts.php");
         Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
         startActivity(launchBrowser);

@@ -57,7 +57,7 @@
         android:textColor="#0077C8"
         android:textSize="22sp"
         android:layout_margin="5dp"
-        android:text="Thanks for helping out!" />
+        android:text="Thanks for doing your part!" />
 
     <ImageView
         android:id="@+id/turtleID"
