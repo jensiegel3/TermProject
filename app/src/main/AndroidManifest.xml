@@ -25,11 +25,11 @@
         <!-- Google Maps keys (debug.keystore-based ones for now) -->
         <!-- Anton:     AIzaSyCxrNFRL-zQJibcZ8l3TcxiMQlg5vadY5Q -->
         <!-- Jen:       AIzaSyBHfqtk-0Ibm8TfDSZkjVTe5agXV6eN7Gc -->
-        <!-- Dana:      AIzaSyAmmMM9SZlaCu3_wCjU-j6TW_7NqaUmWCE -->
+        <!-- Dana:      Laptop: AIzaSyAmmMM9SZlaCu3_wCjU-j6TW_7NqaUmWCE  PC: AIzaSyAvOsLG9gDX1PdwkD__pGHQlLuEKgstVvg-->
         <!-- Miles:     mileskey -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAmmMM9SZlaCu3_wCjU-j6TW_7NqaUmWCE" />
+            android:value="AIzaSyAvOsLG9gDX1PdwkD__pGHQlLuEKgstVvg" />
 
         <activity android:name=".Login">
             <intent-filter>

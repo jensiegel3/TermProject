@@ -59,33 +59,7 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="10dp"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
-            android:layout_weight="1"
-            android:gravity="left"
-            android:textColor="#000000"
-            android:text="Password (not needed): " />
-
-        <EditText
-            android:id="@+id/profilePw"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
-            android:layout_weight="1"
-            android:gravity="left"
-            android:textColor="#000000" />
-
-    </LinearLayout>
 
     <Button
         android:id="@+id/login"
@@ -96,6 +70,16 @@
         android:textColor="#FFFFFFFF"
         android:layout_margin="5dp"
         android:text="Login" />
+
+    <Button
+        android:id="@+id/createNew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:backgroundTint="#888888"
+        android:textColor="#FFFFFFFF"
+        android:layout_margin="5dp"
+        android:text="Register" />
 
     <TextView
         android:id="@+id/loginResult"
