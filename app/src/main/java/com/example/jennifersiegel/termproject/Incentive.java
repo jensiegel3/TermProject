@@ -24,7 +24,7 @@ import android.widget.Toast;
 import java.util.Locale;
 
 
-public class Incentive extends Activity implements OnClickListener, OnInitListener {
+public class Incentive extends BaseActivity implements OnClickListener, OnInitListener {
 
     // create variables for notification
 
@@ -41,6 +41,10 @@ public class Incentive extends Activity implements OnClickListener, OnInitListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // set current activity name
+        currentActivityName = "Incentive";
+
         setContentView(R.layout.activity_incentive);
         TextView learnMore = (TextView) findViewById(R.id.citation);
         learnMore.setOnClickListener(this);
@@ -141,24 +145,4 @@ public class Incentive extends Activity implements OnClickListener, OnInitListen
         startActivity(launchBrowser);
     }
 
-    // create back options menu
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.backmenu, menu);
-        return true;
-    }
-
-    // add functionality to menu buttons
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
-
-            case R.id.homeMenu:
-                finish();
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 }

@@ -159,26 +159,4 @@ public class Login extends Activity {
         if (db != null)
             db.close();
     }
-
-    // create back options menu
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.backmenu, menu);
-        return true;
-    }
-
-    // add functionality to menu buttons
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
-
-            case R.id.homeMenu:
-                Intent iHome = new Intent(this, HomePage.class);
-                startActivity(iHome);
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 }

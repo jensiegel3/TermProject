@@ -14,7 +14,7 @@ import android.widget.TabHost;
 // Jen's update to project
 // Anton's update to project
 // Miles's update to project
-public class HomePage extends Activity implements OnClickListener {
+public class HomePage extends BaseActivity implements OnClickListener {
 
     private Button recycleMaterials;
     private Button findABin;
@@ -24,6 +24,9 @@ public class HomePage extends Activity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        // set current activity name
+        currentActivityName = "HomePage";
 
         // set up listeners for the buttons
         recycleMaterials = (Button) findViewById(R.id.materials);
@@ -64,58 +67,6 @@ public class HomePage extends Activity implements OnClickListener {
 
             default:
                 throw new RuntimeException("Wrong button");
-        }
-    }
-
-    // create options menu
-    // does this have to go on every page?
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
-    }
-
-    // add functionality to menu buttons
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
-
-            case R.id.loginMenu:
-                Intent iLogin = new Intent(this, Login.class);
-                startActivity(iLogin);
-                return true;
-
-            case R.id.profileMenu:
-                Intent iProfile = new Intent(this, Profile.class);
-                startActivity(iProfile);
-                return true;
-
-            case R.id.materialsMenu:
-                Intent iMaterials = new Intent(this, Materials.class);
-                startActivity(iMaterials);
-                return true;
-
-            case R.id.findABinMenu:
-                Intent iFindABin = new Intent(this, FindABin.class);
-                startActivity(iFindABin);
-                return true;
-
-            case R.id.aboutMenu:
-                Intent iAbout = new Intent(this, AboutUs.class);
-                startActivity(iAbout);
-                return true;
-
-            case R.id.incentiveMenu:
-                Intent iIncentive = new Intent(this, Incentive.class);
-                startActivity(iIncentive);
-                return true;
-
-            case R.id.exit:
-                finish();
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
         }
     }
 }

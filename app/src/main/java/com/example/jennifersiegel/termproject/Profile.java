@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class Profile extends Activity implements OnClickListener {
+public class Profile extends BaseActivity implements OnClickListener {
 
     private Button logout;
 
@@ -18,6 +18,9 @@ public class Profile extends Activity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        // set current activity name
+        currentActivityName = "Profile";
 
         // set up listeners for the buttons
         logout = (Button) findViewById(R.id.logout);
@@ -36,24 +39,4 @@ public class Profile extends Activity implements OnClickListener {
         }
     }
 
-    // create back options menu
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.backmenu, menu);
-        return true;
-    }
-
-    // add functionality to menu buttons
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
-
-            case R.id.homeMenu:
-                finish();
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 }

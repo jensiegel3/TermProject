@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
-public class Materials extends Activity implements AdapterView.OnItemSelectedListener {
+public class Materials extends BaseActivity implements AdapterView.OnItemSelectedListener {
     private Spinner materialTypeSpinner;
     private TextView materialTextView;
 
@@ -68,6 +68,9 @@ public class Materials extends Activity implements AdapterView.OnItemSelectedLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materials);
 
+        // set current activity name
+        currentActivityName = "Materials";
+
         materialTypeSpinner = (Spinner) findViewById(R.id.materialtypespinner);
         materialTypeSpinner.setOnItemSelectedListener(this);   //set item click listener
         materialTextView = (TextView) findViewById(R.id.materialtextview);
@@ -103,27 +106,6 @@ public class Materials extends Activity implements AdapterView.OnItemSelectedLis
     }
     public void onNothingSelected(AdapterView<?> parent) {
         materialTextView.setText("");
-    }
-
-    // create back options menu
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.backmenu, menu);
-        return true;
-    }
-
-    // add functionality to menu buttons
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
-
-            case R.id.homeMenu:
-                finish();
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 
     ////////////////////////////////////////////////////////

@@ -11,7 +11,7 @@ import android.view.View.OnClickListener;
 import android.view.View;
 import android.widget.EditText;
 
-public class AboutUs extends Activity{
+public class AboutUs extends BaseActivity{
 
     private Button send;
     private Button call1;
@@ -23,6 +23,10 @@ public class AboutUs extends Activity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aboutus);
+
+        // set current activity name
+        currentActivityName = "AboutUs";
+
         send = (Button) findViewById(R.id.send);
         call1 = (Button) findViewById(R.id.call1);
         call2 = (Button) findViewById(R.id.call2);
@@ -73,27 +77,6 @@ public class AboutUs extends Activity{
             }
         });
 
-    }
-
-    // create back options menu
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.backmenu, menu);
-        return true;
-    }
-
-    // add functionality to menu buttons
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
-
-            case R.id.homeMenu:
-                finish();
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 
 }
