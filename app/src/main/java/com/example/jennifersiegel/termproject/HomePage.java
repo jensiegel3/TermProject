@@ -21,7 +21,7 @@ public class HomePage extends BaseActivity implements OnClickListener {
     private Button findABin;
 
     // Name variable from Login Activity
-    private String loggedInName;
+//    private String loggedInName;
 
 
     @Override
@@ -32,10 +32,6 @@ public class HomePage extends BaseActivity implements OnClickListener {
         // set current activity name
         currentActivityName = "HomePage";
 
-        // getting logged in name from Login Activity
-        Intent myLocalIntent = getIntent();
-        Bundle profile = myLocalIntent.getExtras();
-        loggedInName = profile.getString("name");
         Toast.makeText(getApplicationContext(), "Welcome, user " + loggedInName, Toast.LENGTH_LONG).show();
 
         // set up listeners for the buttons

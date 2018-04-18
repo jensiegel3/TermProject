@@ -17,7 +17,7 @@ import android.widget.Toast;
  * Created by Dana on 4/3/2018.
  */
 
-public class Login extends Activity {
+public class Login extends BaseActivity {
 
     private Button login;
     private Button createNew;
@@ -26,9 +26,6 @@ public class Login extends Activity {
     private SQLiteDatabase db;
     private ContentValues values;
     private Cursor cursor;
-
-    // This is the variable that should be passed between activities
-    private String loggedInName;
 
 // This variable used only when creating a new table
     private final String create = SQLConstants.CREATE_TABLE;

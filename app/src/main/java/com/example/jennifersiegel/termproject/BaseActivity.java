@@ -11,7 +11,8 @@ import android.view.MenuItem;
 
 public class BaseActivity extends Activity {
 
-    protected String currentActivityName;
+    protected static String currentActivityName;
+    protected static String loggedInName;
 
     // create options menu
     // does this have to go on every page?

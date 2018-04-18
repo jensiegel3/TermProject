@@ -9,15 +9,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class Profile extends BaseActivity implements OnClickListener {
 
     private Button logout;
+    private TextView name;
+    private TextView points;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        name = (TextView) findViewById(R.id.userName);
+        points = (TextView) findViewById(R.id.userPoints);
+        name.setText(loggedInName);
 
         // set current activity name
         currentActivityName = "Profile";
