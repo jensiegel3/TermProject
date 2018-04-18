@@ -27,6 +27,9 @@ public class Login extends Activity {
     private ContentValues values;
     private Cursor cursor;
 
+    // This is the variable that should be passed between activities
+    private String loggedInName;
+
 // This variable used only when creating a new table
     private final String create = SQLConstants.CREATE_TABLE;
 
@@ -79,7 +82,8 @@ public class Login extends Activity {
 
                 if (logInCheck(s)) {
                     Toast.makeText(getApplicationContext(), "Found Profile", Toast.LENGTH_LONG).show();
-                    displayProfile(s);
+                    loggedInName = s;
+                    endLoginActivity();
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "No Profile Found", Toast.LENGTH_LONG).show();
@@ -98,7 +102,8 @@ public class Login extends Activity {
                 else {
                     createProfile(s,0);
                     Toast.makeText(getApplicationContext(), "Profile Created", Toast.LENGTH_LONG).show();
-                    displayProfile(s);
+                    loggedInName = s;
+                    endLoginActivity();
                 }
             }
         });
@@ -139,6 +144,12 @@ public class Login extends Activity {
             int count = cursor.getInt(cursor.getColumnIndex(SQLConstants.KEY_Q));
             text.append(str + " " + Integer.toString(count) + "\n");
         }
+    }
+
+    public boolean endLoginActivity(){
+        Intent iHome = new Intent(this, HomePage.class);
+        startActivity(iHome);
+        return true;
     }
 
     // close database
