@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TabHost;
+import android.widget.Toast;
 
 // Dana's update to project
 // Jen's update to project
@@ -19,6 +20,9 @@ public class HomePage extends BaseActivity implements OnClickListener {
     private Button recycleMaterials;
     private Button findABin;
 
+    // Name variable from Login Activity
+    private String loggedInName;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,12 @@ public class HomePage extends BaseActivity implements OnClickListener {
 
         // set current activity name
         currentActivityName = "HomePage";
+
+        // getting logged in name from Login Activity
+        Intent myLocalIntent = getIntent();
+        Bundle profile = myLocalIntent.getExtras();
+        loggedInName = profile.getString("name");
+        Toast.makeText(getApplicationContext(), "Welcome, user " + loggedInName, Toast.LENGTH_LONG).show();
 
         // set up listeners for the buttons
         recycleMaterials = (Button) findViewById(R.id.materials);

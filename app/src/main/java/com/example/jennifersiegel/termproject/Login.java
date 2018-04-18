@@ -148,7 +148,10 @@ public class Login extends Activity {
 
     public boolean endLoginActivity(){
         Intent iHome = new Intent(this, HomePage.class);
-        startActivity(iHome);
+        Bundle profile = new Bundle();
+        profile.putString("name", loggedInName);
+        iHome.putExtras(profile);
+        startActivityForResult(iHome, 1);
         return true;
     }
 
@@ -158,5 +161,26 @@ public class Login extends Activity {
         super.onPause();
         if (db != null)
             db.close();
+    }
+
+    // create back options menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.backmenu, menu);
+        return true;
+    }
+
+    // add functionality to menu buttons
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+
+            case R.id.homeMenu:
+                finish();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
