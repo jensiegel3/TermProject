@@ -139,7 +139,7 @@ public class Incentive extends BaseActivity implements OnClickListener, OnInitLi
     }
 
     public void onClick(View v) {
-        speak("Thanks for doing your part");
+        speak("Thanks for doing your part! You've made the sea turtles happy!");
         Uri uriUrl = Uri.parse("https://www.conserve-energy-future.com/various-recycling-facts.php");
         Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
         startActivity(launchBrowser);
