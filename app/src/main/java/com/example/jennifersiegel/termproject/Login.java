@@ -23,9 +23,6 @@ public class Login extends BaseActivity {
     private Button createNew;
     private TextView text;
     private EditText loginName;
-    private SQLiteDatabase db;
-    private ContentValues values;
-    private Cursor cursor;
 
 // This variable used only when creating a new table
     private final String create = SQLConstants.CREATE_TABLE;
@@ -145,9 +142,9 @@ public class Login extends BaseActivity {
 
     public boolean endLoginActivity(){
         Intent iHome = new Intent(this, HomePage.class);
-        Bundle profile = new Bundle();
-        profile.putString("name", loggedInName);
-        iHome.putExtras(profile);
+        //Bundle profile = new Bundle();
+        //profile.putString("name", loggedInName);
+        //iHome.putExtras(profile);
         startActivityForResult(iHome, 1);
         return true;
     }

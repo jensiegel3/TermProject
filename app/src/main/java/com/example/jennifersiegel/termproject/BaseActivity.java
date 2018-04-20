@@ -1,7 +1,10 @@
 package com.example.jennifersiegel.termproject;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -13,6 +16,11 @@ public class BaseActivity extends Activity {
 
     protected static String currentActivityName;
     protected static String loggedInName;
+
+    // SQLite variables
+    protected SQLiteDatabase db;
+    protected ContentValues values;
+    protected Cursor cursor;
 
     // create options menu
     // does this have to go on every page?

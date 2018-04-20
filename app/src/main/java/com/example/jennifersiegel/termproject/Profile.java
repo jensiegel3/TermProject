@@ -1,6 +1,7 @@
 package com.example.jennifersiegel.termproject;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,6 +33,16 @@ public class Profile extends BaseActivity implements OnClickListener {
         // set up listeners for the buttons
         logout = (Button) findViewById(R.id.logout);
         logout.setOnClickListener(this);
+
+        // set up database and query to populate current points
+        db = openOrCreateDatabase(SQLConstants.DATABASE_NAME, Context.MODE_PRIVATE, null);
+        String whereClause = SQLConstants.KEY_NAME + "= ?";
+        String[] emailLogin = new String[] {loggedInName.toUpperCase()};
+        cursor = db.query(SQLConstants.TABLE_NAME, new String[]{SQLConstants.KEY_Q}, whereClause, emailLogin,null, null, null);
+        cursor.moveToNext();
+        int intPoints = cursor.getInt(cursor.getColumnIndex(SQLConstants.KEY_Q));
+        points.setText(Integer.toString(intPoints));
+
     }
 
     public void onClick(View v) {
