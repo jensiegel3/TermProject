@@ -78,10 +78,10 @@ public class Materials extends BaseActivity implements AdapterView.OnItemSelecte
         // Create an ArrayAdapter for material type spinner and connect it to the spinner
         ArrayAdapter<String> recyclableCategoriesAdapter = new ArrayAdapter<String>(
                 this,
-                android.R.layout.simple_spinner_item,
+                R.layout.spinner_style,
                 recyclableCategories);
         recyclableCategoriesAdapter.setDropDownViewResource(
-                android.R.layout.simple_spinner_dropdown_item);
+                R.layout.spinner_style_dropdown);
         materialTypeSpinner.setAdapter(recyclableCategoriesAdapter);
     }
 
