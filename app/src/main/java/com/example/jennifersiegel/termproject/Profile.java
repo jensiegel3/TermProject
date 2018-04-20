@@ -34,7 +34,7 @@ public class Profile extends BaseActivity implements OnClickListener {
         logout = (Button) findViewById(R.id.logout);
         logout.setOnClickListener(this);
 
-        // set up database and query to populate current points
+        // set up database call and query to populate current points
         db = openOrCreateDatabase(SQLConstants.DATABASE_NAME, Context.MODE_PRIVATE, null);
         String whereClause = SQLConstants.KEY_NAME + "= ?";
         String[] emailLogin = new String[] {loggedInName.toUpperCase()};
