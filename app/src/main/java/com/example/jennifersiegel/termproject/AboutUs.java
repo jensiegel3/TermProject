@@ -29,6 +29,8 @@ public class AboutUs extends BaseActivity{
         send = (Button) findViewById(R.id.send);
         call1 = (Button) findViewById(R.id.call1);
         call2 = (Button) findViewById(R.id.call2);
+        subject = (EditText) findViewById(R.id.subject);
+        subject.setHint("Subject");
         text = (EditText) findViewById(R.id.text);
         text.setHint("What do you need help with?");
 
@@ -36,8 +38,9 @@ public class AboutUs extends BaseActivity{
         send.setOnClickListener(new OnClickListener() {
             public void onClick(View v){
 
+                String subj = subject.getText().toString();
                 Intent msg = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:sustainability2@bentley.edu"));
-                msg.putExtra(Intent.EXTRA_SUBJECT, "Sustainability Question");
+                msg.putExtra(Intent.EXTRA_SUBJECT, subj);
                 msg.putExtra(Intent.EXTRA_TEXT, text.getText());
 
                 //check to be sure email is installed on handset
