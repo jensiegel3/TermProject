@@ -8,18 +8,11 @@ import android.widget.Button;
 import android.widget.TabHost;
 import android.widget.Toast;
 
-// Dana's update to project
-// Jen's update to project
-// Anton's update to project
-// Miles's update to project
+
 public class HomePage extends BaseActivity implements OnClickListener {
 
     private Button recycleMaterials;
     private Button findABin;
-
-    // Name variable from Login Activity
-//    private String loggedInName;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +30,7 @@ public class HomePage extends BaseActivity implements OnClickListener {
         findABin = (Button) findViewById(R.id.findabin);
         findABin.setOnClickListener(this);
 
+        // set up tab structure
         TabHost tabs=(TabHost)findViewById(R.id.tabhost);
         tabs.setup();
 
@@ -44,18 +38,19 @@ public class HomePage extends BaseActivity implements OnClickListener {
 
         // Initialize a TabSpec for tab1 and add it to the TabHost
         spec=tabs.newTabSpec("tag1");	//create new tab specification
-        spec.setContent(R.id.tab1);    //add tab view content
-        spec.setIndicator("Recycling");    //put text on tab
-        tabs.addTab(spec);             //put tab in TabHost container
+        spec.setContent(R.id.tab1);    // add tab view content
+        spec.setIndicator("Recycling");    // put text on tab
+        tabs.addTab(spec);             // put tab in TabHost container
 
         // Initialize a TabSpec for tab2 and add it to the TabHost
-        spec=tabs.newTabSpec("tag2");		//create new tab specification
-        spec.setContent(R.id.tab2);			//add view tab content
-        spec.setIndicator("Trash");
+        spec=tabs.newTabSpec("tag2");		// create new tab specification
+        spec.setContent(R.id.tab2);			// add view tab content
+        spec.setIndicator("Trash");         // put text on tab
         tabs.addTab(spec);					//put tab in TabHost container
 
     }
 
+    // switch activities from buttons on homepage
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.materials:

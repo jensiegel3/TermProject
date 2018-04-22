@@ -21,7 +21,7 @@ public class Login extends BaseActivity {
 
     private Button login;
     private Button createNew;
-    private TextView text;
+    //private TextView slogan;
     private EditText loginName;
 
 // This variable used only when creating a new table
@@ -36,7 +36,7 @@ public class Login extends BaseActivity {
         login = (Button) findViewById(R.id.login);
         createNew = (Button) findViewById(R.id.createNew);
 
-        text = (TextView) findViewById(R.id.loginResult);
+        //slogan = (TextView) findViewById(R.id.slogan);
         loginName = (EditText) findViewById(R.id.profileId);
 
         // create database and table
@@ -50,21 +50,25 @@ public class Login extends BaseActivity {
         ///////////////////////////////////////////////////////////////
 
         // check if records exist
-        // initialize and insert testing records
-        if (!logInCheck("d")){
-            createProfile("d", 9);
+        // insert records
+        if (!logInCheck("danafshay@gmail.com")){
+            createProfile("danafshay@gmail.com", 9);
+            //displayProfile("danafshay@gmail.com");
         }
 
         if (!logInCheck("antonbagayev@gmail.com")) {
             createProfile("antonbagayev@gmail.com", 23);
+            //displayProfile("antonbagayev@gmail.com");
         }
 
         if (!logInCheck("jensiegel3@gmail.com")){
             createProfile("jensiegel3@gmail.com", 13);
+            //displayProfile("jensiegel3@gmail.com");
         }
 
         if (!logInCheck("mileskap@gmail.com")){
             createProfile("mileskap@gmail.com", 37);
+            //displayProfile("mileskap@gmail.com");
        }
 
         // LogIn button listener

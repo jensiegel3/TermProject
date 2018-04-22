@@ -2,15 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     android:orientation="vertical" >
 
-    <TextClock
-        android:layout_width="wrap_content"
-        android:layout_height="50dip"
-        android:layout_gravity="center_horizontal"
-        android:format12Hour="EEE MMM dd yyyy, h:mm:ss aa"
-        android:textColor="#ff0000ff"
-        android:timeZone="EST" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0077C8"
+        android:gravity="center"
+        android:textColor="#F1B828"
+        android:text = "Blue + Yellow = Green!"
+        android:textSize="32sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -79,14 +81,10 @@
         android:layout_margin="5dp"
         android:text="Register" />
 
-    <TextView
-        android:id="@+id/loginResult"
+    <ImageView
+        android:id="@+id/goingGreen"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginEnd="5dp"
-        android:layout_weight="1"
-        android:gravity="start"
-        android:textColor="#000000"
-        android:text="" />
+        android:layout_height="match_parent"
+        android:src="@drawable/going_green" />
 
 </LinearLayout>

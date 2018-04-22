@@ -18,6 +18,7 @@ public class Profile extends BaseActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        // connect to widgets in xml
         name = (TextView) findViewById(R.id.userName);
         points = (TextView) findViewById(R.id.userPoints);
         name.setText(loggedInName);
@@ -35,6 +36,7 @@ public class Profile extends BaseActivity implements OnClickListener {
 
     }
 
+    // When logout button is clicked, return to login page
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.logout:
