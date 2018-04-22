@@ -1,8 +1,10 @@
 package com.example.jennifersiegel.termproject;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -34,14 +36,9 @@ public class Profile extends BaseActivity implements OnClickListener {
         logout = (Button) findViewById(R.id.logout);
         logout.setOnClickListener(this);
 
-        // set up database call and query to populate current points
-        db = openOrCreateDatabase(SQLConstants.DATABASE_NAME, Context.MODE_PRIVATE, null);
-        String whereClause = SQLConstants.KEY_NAME + "= ?";
-        String[] emailLogin = new String[] {loggedInName.toUpperCase()};
-        cursor = db.query(SQLConstants.TABLE_NAME, new String[]{SQLConstants.KEY_Q}, whereClause, emailLogin,null, null, null);
-        cursor.moveToNext();
-        int intPoints = cursor.getInt(cursor.getColumnIndex(SQLConstants.KEY_Q));
-        points.setText(Integer.toString(intPoints));
+        // method to populate current points
+        points.setText(Integer.toString(getPoints()));
+
 
     }
 
@@ -56,5 +53,4 @@ public class Profile extends BaseActivity implements OnClickListener {
                 throw new RuntimeException("Wrong button");
         }
     }
-
 }

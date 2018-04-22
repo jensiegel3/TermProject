@@ -2,6 +2,7 @@ package com.example.jennifersiegel.termproject;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -87,6 +88,15 @@ public class BaseActivity extends Activity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+    public int getPoints(){
+        db = openOrCreateDatabase(SQLConstants.DATABASE_NAME, Context.MODE_PRIVATE, null);
+        String whereClause = SQLConstants.KEY_NAME + "= ?";
+        String[] emailLogin = new String[] {loggedInName.toUpperCase()};
+        cursor = db.query(SQLConstants.TABLE_NAME, new String[]{SQLConstants.KEY_Q}, whereClause, emailLogin,null, null, null);
+        cursor.moveToNext();
+        int intPoints = cursor.getInt(cursor.getColumnIndex(SQLConstants.KEY_Q));
+        return intPoints;
     }
 
 }

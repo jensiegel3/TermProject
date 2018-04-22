@@ -1,6 +1,8 @@
 package com.example.jennifersiegel.termproject;
 
 import android.app.Activity;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -123,6 +125,19 @@ public class Materials extends BaseActivity implements AdapterView.OnItemSelecte
     ////////////////////////////////////////////////////////
 
     public void scanBarcode(View view) {
+
+        //
+        // This code will go into the "onActivityResult" method in production version
+        // Code lives here for testing ONLY
+        // increasing points by 1
+        values = new ContentValues();
+        String pointIncrease = String.valueOf(getPoints()+1);
+        values.put(SQLConstants.KEY_Q, pointIncrease);
+        db.update(SQLConstants.TABLE_NAME, values, SQLConstants.KEY_NAME + "=?",
+                new String[]{loggedInName});
+        // end of update sql code
+        //
+
         IntentIntegrator integrator = new IntentIntegrator(this);
         integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE);
         integrator.setPrompt("Please scan the QR code on the recycling bin!");
