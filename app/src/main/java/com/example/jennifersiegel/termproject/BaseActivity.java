@@ -8,6 +8,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
+
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 /**
  * Created by Anton on 4/18/2018.
@@ -65,6 +70,10 @@ public class BaseActivity extends Activity {
                 }
                 return true;
 
+            case R.id.scanCodeMenu:
+                scanBarcode(getWindow().getDecorView().getRootView());
+                return true;
+
             case R.id.aboutMenu:
                 // don't start the same activity again
                 if (!currentActivityName.equals("AboutUs")){
@@ -89,6 +98,8 @@ public class BaseActivity extends Activity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    // Global method to get user's ponts
     public int getPoints(){
         db = openOrCreateDatabase(SQLConstants.DATABASE_NAME, Context.MODE_PRIVATE, null);
         String whereClause = SQLConstants.KEY_NAME + "= ?";
@@ -97,6 +108,49 @@ public class BaseActivity extends Activity {
         cursor.moveToNext();
         int intPoints = cursor.getInt(cursor.getColumnIndex(SQLConstants.KEY_Q));
         return intPoints;
+    }
+
+
+    ////////////////////////////////////////////////////////
+    // QR Code scanning methods
+    ////////////////////////////////////////////////////////
+
+    public void scanBarcode(View view) {
+        // This code will go into the "onActivityResult" method in production version
+        // Code lives here for testing ONLY
+        // increasing points by 1
+        values = new ContentValues();
+        String pointIncrease = String.valueOf(getPoints()+1);
+        values.put(SQLConstants.KEY_Q, pointIncrease);
+        db.update(SQLConstants.TABLE_NAME, values, SQLConstants.KEY_NAME + "=?",
+                new String[]{loggedInName});
+        // end of update sql code
+        //
+
+        IntentIntegrator integrator = new IntentIntegrator(this);
+        integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE);
+        integrator.setPrompt("Please scan the QR code on the recycling bin!");
+        integrator.setOrientationLocked(false);
+        integrator.setBeepEnabled(true);
+        integrator.initiateScan();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if(result != null) {
+            if(result.getContents() == null) {
+                Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+
+
+
+            }
+        } else {
+            // This is important, otherwise the result will not be passed to the fragment
+            super.onActivityResult(requestCode, resultCode, data);
+        }
     }
 
 }

@@ -13,6 +13,10 @@
         android:title="Find a Bin"
         android:showAsAction="never"
         />
+    <item android:id="@+id/scanCodeMenu"
+        android:title="Scan Code"
+        android:showAsAction="never"
+        />
     <item android:id="@+id/aboutMenu"
         android:title="About Us"
         android:showAsAction="never"

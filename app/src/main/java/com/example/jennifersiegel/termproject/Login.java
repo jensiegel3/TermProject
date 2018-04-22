@@ -157,10 +157,9 @@ public class Login extends BaseActivity {
             db.close();
     }
 
-    // create back options menu
+    // create empty options menu (overriding the regular gloabl menu in BaseActivity)
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.backmenu, menu);
         return true;
     }
 
@@ -168,11 +167,6 @@ public class Login extends BaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
-
-            case R.id.homeMenu:
-                finish();
-                return true;
-
             default:
                 return super.onOptionsItemSelected(item);
         }
