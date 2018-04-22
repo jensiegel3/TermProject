@@ -99,7 +99,10 @@ public class BaseActivity extends Activity {
         }
     }
 
+    //
+    // Method returns an integer value - based on logged in name
     // Global method to get user's ponts
+    //
     public int getPoints(){
         db = openOrCreateDatabase(SQLConstants.DATABASE_NAME, Context.MODE_PRIVATE, null);
         String whereClause = SQLConstants.KEY_NAME + "= ?";
@@ -110,22 +113,39 @@ public class BaseActivity extends Activity {
         return intPoints;
     }
 
+    //
+    // Method that increases points by 1 - based on logged in name
+    //
+    public boolean incrementPoints (){
+        values = new ContentValues();
+        String pointIncrease = String.valueOf(getPoints()+1);
+        values.put(SQLConstants.KEY_Q, pointIncrease);
+        db.update(SQLConstants.TABLE_NAME, values, SQLConstants.KEY_NAME + "=?",
+                new String[]{loggedInName});
+        return true;
+    }
+
+    // This code will check to see if the user has a multiple of 10 points
+    // When the user has 10 points, the incentive activity will be triggered
+    //
+    // Check for multiples of 10
+    public void inventiveCheck(){
+        if(getPoints() % 10 == 0) {
+            Intent iIncentive = new Intent(this, Incentive.class);
+            startActivity(iIncentive);
+        }
+        else {
+            Intent iProfile = new Intent(this, Profile.class);
+            startActivity(iProfile);
+        }
+    }
+
 
     ////////////////////////////////////////////////////////
     // QR Code scanning methods
     ////////////////////////////////////////////////////////
 
     public void scanBarcode(View view) {
-        // This code will go into the "onActivityResult" method in production version
-        // Code lives here for testing ONLY
-        // increasing points by 1
-        values = new ContentValues();
-        String pointIncrease = String.valueOf(getPoints()+1);
-        values.put(SQLConstants.KEY_Q, pointIncrease);
-        db.update(SQLConstants.TABLE_NAME, values, SQLConstants.KEY_NAME + "=?",
-                new String[]{loggedInName});
-        // end of update sql code
-        //
 
         IntentIntegrator integrator = new IntentIntegrator(this);
         integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE);
@@ -143,9 +163,10 @@ public class BaseActivity extends Activity {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
-
-
-
+                // This method will go into the "onActivityResult" method in production version
+                incrementPoints();
+                inventiveCheck();
+                //
             }
         } else {
             // This is important, otherwise the result will not be passed to the fragment

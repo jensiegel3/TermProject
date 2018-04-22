@@ -43,30 +43,28 @@ public class Login extends BaseActivity {
         db = openOrCreateDatabase(SQLConstants.DATABASE_NAME,
                 Context.MODE_PRIVATE, null);
 
-// remove code to keep database static
-        // db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-        // db.execSQL(create);
+        ///////////////////////////////////////////////////////////////
+        // remove code to keep database static
+        db.execSQL("DROP TABLE IF EXISTS " + SQLConstants.TABLE_NAME);
+        db.execSQL(create);
+        ///////////////////////////////////////////////////////////////
 
         // check if records exist
-        // insert records
-        if (!logInCheck("danafshay@gmail.com")){
-            createProfile("danafshay@gmail.com", 9);
-            displayProfile("danafshay@gmail.com");
+        // initialize and insert testing records
+        if (!logInCheck("d")){
+            createProfile("d", 9);
         }
 
         if (!logInCheck("antonbagayev@gmail.com")) {
             createProfile("antonbagayev@gmail.com", 23);
-            displayProfile("antonbagayev@gmail.com");
         }
 
         if (!logInCheck("jensiegel3@gmail.com")){
             createProfile("jensiegel3@gmail.com", 13);
-            displayProfile("jensiegel3@gmail.com");
         }
 
         if (!logInCheck("mileskap@gmail.com")){
             createProfile("mileskap@gmail.com", 37);
-            displayProfile("mileskap@gmail.com");
        }
 
         // LogIn button listener
@@ -126,6 +124,8 @@ public class Login extends BaseActivity {
     }
 
     // Display profile information to TextView box
+    // would need textView to write to
+    /*
     public void displayProfile (String login) {
         String whereClause = SQLConstants.KEY_NAME + "= ?";
         String[] emailLogin = new String[]{login.toUpperCase()};
@@ -136,9 +136,10 @@ public class Login extends BaseActivity {
         while (cursor.moveToNext()) {
             String str = cursor.getString(cursor.getColumnIndex(SQLConstants.KEY_NAME));
             int count = cursor.getInt(cursor.getColumnIndex(SQLConstants.KEY_Q));
-            text.append(str + " " + Integer.toString(count) + "\n");
+            "FOO".append(str + " " + Integer.toString(count) + "\n");
         }
     }
+    */
 
     public boolean endLoginActivity(){
         Intent iHome = new Intent(this, HomePage.class);
