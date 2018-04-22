@@ -24,7 +24,8 @@ public class Materials extends BaseActivity implements AdapterView.OnItemSelecte
             "Paper & CardBoard",
             "Plastic",
             "Metal",
-            "Glass"
+            "Glass",
+            "Electronics"
     };
     private final String itemListPrompt = "Recyclable items in this category are:\n\n";
 
@@ -63,6 +64,12 @@ public class Materials extends BaseActivity implements AdapterView.OnItemSelecte
             "- Food Jars\n" +
             "- Other glass containers";
 
+    private final String electronicsItems =
+            "- Batteries\n" +
+                    "- Cell Phones\n" +
+                    "- Hand-held Electronics\n" +
+                    "- Inkjet Cartridges";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,6 +107,9 @@ public class Materials extends BaseActivity implements AdapterView.OnItemSelecte
                 break;
             case 4:
                 materialTextView.setText(itemListPrompt + glassItems);
+                break;
+            case 5:
+                materialTextView.setText(itemListPrompt + electronicsItems);
                 break;
         }
 

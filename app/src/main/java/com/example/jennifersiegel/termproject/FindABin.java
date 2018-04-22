@@ -102,7 +102,7 @@ public class FindABin extends FragmentActivity implements OnMapReadyCallback{
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_3)
-                .title("Morison Hall")
+                .title("Morrison Hall")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_4)
@@ -158,7 +158,7 @@ public class FindABin extends FragmentActivity implements OnMapReadyCallback{
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_17)
-                .title("Morison Hall")
+                .title("Morrison Hall")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_18)
@@ -252,6 +252,14 @@ public class FindABin extends FragmentActivity implements OnMapReadyCallback{
                 .position(BIN_40)
                 .title("Dana Center")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(42.387983,-71.219838))
+                .title("Library Ground Floor (Next to Client Services)")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.electronics_marker)));
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(42.387787,-71.218821))
+                .title("Morrison First Floor")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.electronics_marker)));
 
         mMap.setOnMarkerClickListener(
                 new GoogleMap.OnMarkerClickListener() {
