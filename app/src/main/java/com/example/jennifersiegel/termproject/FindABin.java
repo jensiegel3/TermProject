@@ -1,8 +1,6 @@
 package com.example.jennifersiegel.termproject;
 
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,8 +18,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class FindABin extends FragmentActivity implements OnMapReadyCallback{
 
+    // initialize google map, latitude and longitude coordinates of bins, and zoom
     private GoogleMap mMap;
-    private Marker positionMarker;
     private static final LatLng CENTER_POINT = new LatLng(42.3870139,-71.2217289);
     private static final LatLng BIN_1 = new LatLng(42.386029,-71.2232306); // Student Center
     private static final LatLng BIN_2 = new LatLng(42.387241,-71.2197609);  // Adamian Academic Center
@@ -89,9 +87,10 @@ public class FindABin extends FragmentActivity implements OnMapReadyCallback{
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+        // move camera to the center on bentley
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(CENTER_POINT, zoom));
 
-        // set markers for 4 NYC colleges
+        // set markers for all bins
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_1)
                 .title("Student Center")
@@ -261,6 +260,7 @@ public class FindABin extends FragmentActivity implements OnMapReadyCallback{
                 .title("Morrison First Floor")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.electronics_marker)));
 
+        // set onclick listener for markers to display approximate location (building)
         mMap.setOnMarkerClickListener(
                 new GoogleMap.OnMarkerClickListener() {
                     public boolean onMarkerClick(Marker m) {

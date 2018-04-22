@@ -1,11 +1,8 @@
 package com.example.jennifersiegel.termproject;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Button;
 import android.view.View.OnClickListener;
 import android.view.View;
@@ -27,6 +24,7 @@ public class AboutUs extends BaseActivity{
         // set current activity name
         currentActivityName = "AboutUs";
 
+        // initialize UI components
         send = (Button) findViewById(R.id.send);
         call1 = (Button) findViewById(R.id.call1);
         call2 = (Button) findViewById(R.id.call2);
@@ -35,6 +33,7 @@ public class AboutUs extends BaseActivity{
         text = (EditText) findViewById(R.id.text);
         text.setHint("What do you need help with?");
 
+        // set listener for contacting Bentley Office of Sustainability (Email intent)
         send.setOnClickListener(new OnClickListener() {
             public void onClick(View v){
 
@@ -51,12 +50,13 @@ public class AboutUs extends BaseActivity{
             }
         });
 
+        // set listeners for contacting Bentley Office of Sustainability Leadership by telephone (Dialer intent)
         call1.setOnClickListener(new OnClickListener() {
             public void onClick(View v){
 
                 Intent dial = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:7818912252"));
 
-                //check to be sure email is installed on handset
+                //check to be sure dialer is installed on handset
                 if (dial.resolveActivity(getPackageManager()) != null) {
                     startActivity(dial);
                 }
@@ -69,7 +69,7 @@ public class AboutUs extends BaseActivity{
 
                 Intent dial = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:7818912295"));
 
-                //check to be sure email is installed on handset
+                //check to be sure dialer is installed on handset
                 if (dial.resolveActivity(getPackageManager()) != null) {
                     startActivity(dial);
                 }
