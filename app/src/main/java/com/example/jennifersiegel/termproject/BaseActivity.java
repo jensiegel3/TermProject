@@ -20,7 +20,10 @@ import com.google.zxing.integration.android.IntentResult;
 
 public class BaseActivity extends Activity {
 
+    // variable keeping track of the current activity
+    // mainly for the purposes of options menu
     protected static String currentActivityName;
+    // variable storing user's login
     protected static String loggedInName;
 
     // SQLite variables
@@ -42,6 +45,7 @@ public class BaseActivity extends Activity {
         switch (item.getItemId()){
 
             case R.id.homeMenu:
+                // don't start the same activity again
                 if (!currentActivityName.equals("HomePage")) {
                     Intent iHome = new Intent(this, HomePage.class);
                     startActivityForResult(iHome, 1);
@@ -73,6 +77,7 @@ public class BaseActivity extends Activity {
                 return true;
 
             case R.id.scanCodeMenu:
+                // scan barcode activity doesn't have this menu in it
                 scanBarcode(getWindow().getDecorView().getRootView());
                 return true;
 
@@ -85,6 +90,7 @@ public class BaseActivity extends Activity {
                 return true;
 
             case R.id.logoutMenu:
+                // scan barcode activity doesn't have this menu in it
                 Intent iLogin = new Intent(this, Login.class);
                 startActivity(iLogin);
                 return true;
@@ -120,8 +126,9 @@ public class BaseActivity extends Activity {
         return true;
     }
 
-    // This code will check to see if the user has a multiple of 10 points
-    // When the user has 10 points, the incentive activity will be triggered
+    // This code will check to see if user's points are a multiple of 10
+    // When the user has 10*n points (where n is a positive integer),
+    // the incentive activity will be triggered
     //
     // Check for multiples of 10
     public void inventiveCheck(){
@@ -140,8 +147,10 @@ public class BaseActivity extends Activity {
     // QR Code scanning methods
     ////////////////////////////////////////////////////////
 
+    /*
+     * Method that launches an intent for QR code scanning activity
+     */
     public void scanBarcode(View view) {
-
         IntentIntegrator integrator = new IntentIntegrator(this);
         integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE);
         integrator.setPrompt("Please scan the QR code on the recycling bin!");
@@ -151,6 +160,9 @@ public class BaseActivity extends Activity {
     }
 
     @Override
+    /*
+     * Method that listens for QR code scanning activity's result
+     */
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if(result != null) {
@@ -158,10 +170,9 @@ public class BaseActivity extends Activity {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
-                // This method will go into the "onActivityResult" method in production version
+                // Increment user's points by 1 and check if they qualify for incentive
                 incrementPoints();
                 inventiveCheck();
-                //
             }
         } else {
             // This is important, otherwise the result will not be passed to the fragment

@@ -11,6 +11,7 @@ public class Materials extends BaseActivity implements AdapterView.OnItemSelecte
     private Spinner materialTypeSpinner;
     private TextView materialTextView;
 
+    // possible categories of recyclable materials
     private final String[] recyclableCategories = {
             "<Select item material type>",
             "Paper & CardBoard",
@@ -21,6 +22,7 @@ public class Materials extends BaseActivity implements AdapterView.OnItemSelecte
     };
     private final String itemListPrompt = "Recyclable items in this category are:\n\n";
 
+    // paper recyclable materials
     private final String paperItems =
             "- White & Colored Paper\n" +
             "- Shredded Paper\n" +
@@ -36,6 +38,7 @@ public class Materials extends BaseActivity implements AdapterView.OnItemSelecte
             "- Milk/Cereal Containers\n" +
             "- Other Unstained Paper";
 
+    // plastic recyclable materials
     private final String plasticItems =
             "- Plastic items (# 1-7)\n" +
             "- Coffee Lids\n" +
@@ -44,23 +47,25 @@ public class Materials extends BaseActivity implements AdapterView.OnItemSelecte
             "- LaCava Clamshells\n" +
             "- Rigid Plastics";
 
-
+    // metal recyclable materials
     private final String metalItems =
             "- Aluminum\n" +
             "- Cans\n" +
             "- Tin\n" +
             "- Foil";
 
+    // glass recyclable materials
     private final String glassItems =
             "- Beverage Bottles\n" +
             "- Food Jars\n" +
             "- Other glass containers";
 
+    // electronics recyclable materials
     private final String electronicsItems =
             "- Batteries\n" +
-                    "- Cell Phones\n" +
-                    "- Hand-held Electronics\n" +
-                    "- Inkjet Cartridges";
+            "- Cell Phones\n" +
+            "- Hand-held Electronics\n" +
+            "- Inkjet Cartridges";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,8 +75,11 @@ public class Materials extends BaseActivity implements AdapterView.OnItemSelecte
         // set current activity name
         currentActivityName = "Materials";
 
+        // spinner view for material categories
         materialTypeSpinner = (Spinner) findViewById(R.id.materialtypespinner);
-        materialTypeSpinner.setOnItemSelectedListener(this);   //set item click listener
+        //set item click listener to this
+        materialTypeSpinner.setOnItemSelectedListener(this);
+        // material text view showing recyclable items in the selected category
         materialTextView = (TextView) findViewById(R.id.materialtextview);
 
         // Create an ArrayAdapter for material type spinner and connect it to the spinner

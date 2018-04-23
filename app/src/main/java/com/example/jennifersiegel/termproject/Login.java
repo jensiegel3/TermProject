@@ -21,7 +21,6 @@ public class Login extends BaseActivity {
 
     private Button login;
     private Button createNew;
-    //private TextView slogan;
     private EditText loginName;
 
 // This variable used only when creating a new table
@@ -34,9 +33,9 @@ public class Login extends BaseActivity {
 
         // Button to initiate login check
         login = (Button) findViewById(R.id.login);
+        // Button to create a new profile (register)
         createNew = (Button) findViewById(R.id.createNew);
-
-        //slogan = (TextView) findViewById(R.id.slogan);
+        // edit text for user's login
         loginName = (EditText) findViewById(R.id.profileId);
 
         // create database and table
@@ -127,24 +126,7 @@ public class Login extends BaseActivity {
         db.insert(SQLConstants.TABLE_NAME, null, values);
     }
 
-    // Display profile information to TextView box
-    // would need textView to write to
-    /*
-    public void displayProfile (String login) {
-        String whereClause = SQLConstants.KEY_NAME + "= ?";
-        String[] emailLogin = new String[]{login.toUpperCase()};
-        cursor = db.query(SQLConstants.TABLE_NAME, new String[]{SQLConstants.KEY_NAME, SQLConstants.KEY_Q},
-                whereClause, emailLogin,
-                null, null, null);
-
-        while (cursor.moveToNext()) {
-            String str = cursor.getString(cursor.getColumnIndex(SQLConstants.KEY_NAME));
-            int count = cursor.getInt(cursor.getColumnIndex(SQLConstants.KEY_Q));
-            "FOO".append(str + " " + Integer.toString(count) + "\n");
-        }
-    }
-    */
-
+    // Method that ends login activity and moves the user to Home Page
     public boolean endLoginActivity(){
         Intent iHome = new Intent(this, HomePage.class);
         startActivityForResult(iHome, 1);

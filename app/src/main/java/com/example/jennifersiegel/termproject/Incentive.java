@@ -58,12 +58,12 @@ public class Incentive extends BaseActivity implements OnClickListener, OnInitLi
         // create Intent for notification
         Intent notifyIntent = new Intent(this, Incentive.class);
 
-        //create pending intent to wrap intent so that it
-        //will fire when notification selected.
+        // create pending intent to wrap intent so that it
+        // will fire when notification selected.
         PendingIntent pendingIntent = PendingIntent.getActivity(
                 this, 0, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        //build notification object and set parameters
+        // build notification object and set parameters
         notifyDetails =
                 new Notification.Builder(this)
                         .setContentIntent(pendingIntent)

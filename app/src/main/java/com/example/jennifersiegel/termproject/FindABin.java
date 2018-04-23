@@ -284,7 +284,7 @@ public class FindABin extends FragmentActivity implements OnMapReadyCallback{
 
     }
 
-    // create back options menu
+    // create options menu containing a single Exit option
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.backmenu, menu);
@@ -296,7 +296,7 @@ public class FindABin extends FragmentActivity implements OnMapReadyCallback{
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
 
-            case R.id.homeMenu:
+            case R.id.exitMenu:
                 finish();
                 return true;
 
