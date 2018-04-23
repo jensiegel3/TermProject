@@ -18,6 +18,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class FindABin extends FragmentActivity implements OnMapReadyCallback{
 
+    private static final String RECYCLING_BIN = "RECYCLING BIN";
+    private static final String ELECTRONICS_RECYCLING_STATION = "ELECTRONICS RECYCLING STATION";
+
     // initialize google map, latitude and longitude coordinates of bins, and zoom
     private GoogleMap mMap;
     private static final LatLng CENTER_POINT = new LatLng(42.3870139,-71.2217289);
@@ -93,171 +96,171 @@ public class FindABin extends FragmentActivity implements OnMapReadyCallback{
         // set markers for all bins
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_1)
-                .title("Student Center")
+                .title(RECYCLING_BIN + "\n" + "Student Center")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_2)
-                .title("Adamian Academic Center")
+                .title(RECYCLING_BIN + "\n" + "Adamian Academic Center")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_3)
-                .title("Morrison Hall")
+                .title(RECYCLING_BIN + "\n" + "Morrison Hall")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_4)
-                .title("User Experience Center")
+                .title(RECYCLING_BIN + "\n" + "User Experience Center")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_5)
-                .title("Boylston B")
+                .title(RECYCLING_BIN + "\n" + "Boylston B")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_6)
-                .title("Rhodes")
+                .title(RECYCLING_BIN + "\n" + "Rhodes")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_7)
-                .title("Greenspace")
+                .title(RECYCLING_BIN + "\n" + "Greenspace")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_8)
-                .title("Greenspace")
+                .title(RECYCLING_BIN + "\n" + "Greenspace")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_9)
-                .title("Collins")
+                .title(RECYCLING_BIN + "\n" + "Collins")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_10)
-                .title("Greenspace")
+                .title(RECYCLING_BIN + "\n" + "Greenspace")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_11)
-                .title("University Bookstore")
+                .title(RECYCLING_BIN + "\n" + "University Bookstore")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_12)
-                .title("Trees Bus Stop")
+                .title(RECYCLING_BIN + "\n" + "Trees Bus Stop")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_13)
-                .title("Trees (Alder)")
+                .title(RECYCLING_BIN + "\n" + "Trees (Alder)")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_14)
-                .title("Trees (Elm)")
+                .title(RECYCLING_BIN + "\n" + "Trees (Elm)")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_15)
-                .title("Lyndsay Hall")
+                .title(RECYCLING_BIN + "\n" + "Lyndsay Hall")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_16)
-                .title("Adamian Academic Center")
+                .title(RECYCLING_BIN + "\n" + "Adamian Academic Center")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_17)
-                .title("Morrison Hall")
+                .title(RECYCLING_BIN + "\n" + "Morrison Hall")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_18)
-                .title("University Library")
+                .title(RECYCLING_BIN + "\n" + "University Library")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_19)
-                .title("Einstein Bros Bagels")
+                .title(RECYCLING_BIN + "\n" + "Einstein Bros Bagels")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_20)
-                .title("Smith Technology Center")
+                .title(RECYCLING_BIN + "\n" + "Smith Technology Center")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_21)
-                .title("Jennison Hall")
+                .title(RECYCLING_BIN + "\n" + "Jennison Hall")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_22)
-                .title("Jennison Hall")
+                .title(RECYCLING_BIN + "\n" + "Jennison Hall")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_23)
-                .title("Jennison Hall")
+                .title(RECYCLING_BIN + "\n" + "Jennison Hall")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_24)
-                .title("LaCava")
+                .title(RECYCLING_BIN + "\n" + "LaCava")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_25)
-                .title("LaCava")
+                .title(RECYCLING_BIN + "\n" + "LaCava")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_26)
-                .title("Rauch")
+                .title(RECYCLING_BIN + "\n" + "Rauch")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_27)
-                .title("Falcone North")
+                .title(RECYCLING_BIN + "\n" + "Falcone North")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_28)
-                .title("Miller")
+                .title(RECYCLING_BIN + "\n" + "Miller")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_29)
-                .title("Miller")
+                .title(RECYCLING_BIN + "\n" + "Miller")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_30)
-                .title("Rhodes")
+                .title(RECYCLING_BIN + "\n" + "Rhodes")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_31)
-                .title("Kresge")
+                .title(RECYCLING_BIN + "\n" + "Kresge")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_32)
-                .title("Forest")
+                .title(RECYCLING_BIN + "\n" + "Forest")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_33)
-                .title("University Bridge")
+                .title(RECYCLING_BIN + "\n" + "University Bridge")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_34)
-                .title("Orchard North")
+                .title(RECYCLING_BIN + "\n" + "Orchard North")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_35)
-                .title("Orchard South")
+                .title(RECYCLING_BIN + "\n" + "Orchard South")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_36)
-                .title("Fenway")
+                .title(RECYCLING_BIN + "\n" + "Fenway")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_37)
-                .title("Copley North")
+                .title(RECYCLING_BIN + "\n" + "Copley North")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_38)
-                .title("Fenway")
+                .title(RECYCLING_BIN + "\n" + "Fenway")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_39)
-                .title("Athletic Fields")
+                .title(RECYCLING_BIN + "\n" + "Athletic Fields")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(BIN_40)
-                .title("Dana Center")
+                .title(RECYCLING_BIN + "\n" + "Dana Center")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin)));
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(42.387983,-71.219838))
-                .title("Library Ground Floor (Next to Client Services)")
+                .title(ELECTRONICS_RECYCLING_STATION + "\n" + "Library Ground Floor (Next to Client Services)")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.electronics_marker)));
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(42.387787,-71.218821))
-                .title("Morrison First Floor")
+                .title(ELECTRONICS_RECYCLING_STATION + "\n" + "Morrison First Floor")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.electronics_marker)));
 
         // set onclick listener for markers to display approximate location (building)

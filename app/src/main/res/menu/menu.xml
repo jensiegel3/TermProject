@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item android:id="@+id/homeMenu"
+        android:title="Home"
+        android:showAsAction="always"
+        />
     <item android:id="@+id/profileMenu"
         android:title="Profile"
-        android:showAsAction="always"
+        android:showAsAction="never"
         />
     <item android:id="@+id/materialsMenu"
         android:title="Check Material"
@@ -21,11 +25,7 @@
         android:title="About Us"
         android:showAsAction="never"
         />
-    <item android:id="@+id/incentiveMenu"
-        android:title="Incentive"
-        android:showAsAction="never"
-        />
-    <item android:id="@+id/loginMenu"
+    <item android:id="@+id/logoutMenu"
         android:title="Logout"
         android:showAsAction="never"
         />

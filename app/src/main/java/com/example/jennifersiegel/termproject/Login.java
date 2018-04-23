@@ -147,9 +147,6 @@ public class Login extends BaseActivity {
 
     public boolean endLoginActivity(){
         Intent iHome = new Intent(this, HomePage.class);
-        //Bundle profile = new Bundle();
-        //profile.putString("name", loggedInName);
-        //iHome.putExtras(profile);
         startActivityForResult(iHome, 1);
         return true;
     }

@@ -41,9 +41,11 @@ public class BaseActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
 
-            case R.id.loginMenu:
-                Intent iLogin = new Intent(this, Login.class);
-                startActivity(iLogin);
+            case R.id.homeMenu:
+                if (!currentActivityName.equals("HomePage")) {
+                    Intent iHome = new Intent(this, HomePage.class);
+                    startActivityForResult(iHome, 1);
+                }
                 return true;
 
             case R.id.profileMenu:
@@ -82,17 +84,10 @@ public class BaseActivity extends Activity {
                 }
                 return true;
 
-            case R.id.incentiveMenu:
-                // don't start the same activity again
-                if (!currentActivityName.equals("Incentive")){
-                    Intent iIncentive = new Intent(this, Incentive.class);
-                    startActivity(iIncentive);
-                }
+            case R.id.logoutMenu:
+                Intent iLogin = new Intent(this, Login.class);
+                startActivity(iLogin);
                 return true;
-
-//            case R.id.exit:
-//                finish();
-//                return true;
 
             default:
                 return super.onOptionsItemSelected(item);
