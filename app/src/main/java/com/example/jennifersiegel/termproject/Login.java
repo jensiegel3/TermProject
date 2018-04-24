@@ -44,8 +44,8 @@ public class Login extends BaseActivity {
 
         ///////////////////////////////////////////////////////////////
         // remove code to keep database static
-        db.execSQL("DROP TABLE IF EXISTS " + SQLConstants.TABLE_NAME);
-        db.execSQL(create);
+        //db.execSQL("DROP TABLE IF EXISTS " + SQLConstants.TABLE_NAME);
+        //db.execSQL(create);
         ///////////////////////////////////////////////////////////////
 
         // check if records exist
