@@ -111,11 +111,13 @@ public class Login extends BaseActivity {
         boolean result = false;
         String whereClause = SQLConstants.KEY_NAME + "= ?";
         String[] emailLogin = new String[] {login.toUpperCase()};
-        cursor = db.query(SQLConstants.TABLE_NAME, new String[]{/*KEY_ID,*/ SQLConstants.KEY_NAME,
-                SQLConstants.KEY_Q}, whereClause, emailLogin,
-                null, null, null);
-        // check for profile and write contents of Cursor to screen
-        if (cursor.moveToNext()) result = true;
+        try {
+            cursor = db.query(SQLConstants.TABLE_NAME, new String[]{/*KEY_ID,*/ SQLConstants.KEY_NAME,
+                            SQLConstants.KEY_Q}, whereClause, emailLogin,
+                    null, null, null);
+            // check for profile and write contents of Cursor to screen
+            if (cursor.moveToNext()) result = true;
+        } catch (SQLiteException e) {}
         return result;
     }
 
